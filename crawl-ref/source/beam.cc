@@ -4436,11 +4436,6 @@ void bolt::monster_post_hit(monster* mon, int dmg)
             if (!mon->alive())
                 return;
         }
-
-
-        // Don't allow darts of sleeping to awaken monsters.
-        if (m_brand == SPMSL_SLEEP && was_asleep && !mon->asleep())
-            mon->put_to_sleep(agent(), 0);
     }
 
     if (YOU_KILL(thrower) && !mon->wont_attack() && !mons_is_firewood(*mon))
